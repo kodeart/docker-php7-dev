@@ -5,7 +5,8 @@ FROM mihailbinev/php7-fpm
 MAINTAINER Mihail Binev <mihail@kodeart.com>
 
 # install dev tools, libs
-RUN apt-get update && apt-get install -y git curl dnsutils openssh-server libbz2-dev && \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git curl dnsutils openssh-server libbz2-dev && \
     docker-php-ext-install bz2 && \
     mkdir -p /var/run/sshd
 
